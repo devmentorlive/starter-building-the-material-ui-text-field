@@ -1,15 +1,30 @@
+:root {
+  --white: #fff;
+  --black: #333;
+  --grey: #999;
+  --light-grey: rgb(219, 219, 219);
+  --primary-color: rgb(69, 134, 231);
+  --error-color: rgb(233, 49, 73);
+  font-size: 16px;
+}
+
+.container {
+  max-width: 400px;
+  margin: 2rem auto;
+}
+
 div.form-field {
   display: block;
   margin-bottom: 16px;
 }
 
 div.form-field.is-focused .control::after {
-  border-bottom: 2px solid rgb(69, 134, 231);
+  border-bottom: 2px solid var(--primary-color);
   transform: scaleX(150);
 }
 
 div.form-field.is-focused .control label {
-  color: rgb(69, 134, 231);
+  color: var(--primary-color);
   font-size: 0.75rem;
   transform: translateY(-14px);
 }
@@ -27,9 +42,9 @@ div.form-field .control {
 }
 
 div.form-field .control::after {
-  border-bottom: 2px solid rgb(69, 134, 231);
+  border-bottom: 2px solid var(--primary-color);
   bottom: 0;
-  content: "";
+  content: '';
   display: block;
   left: 0;
   margin: 0 auto;
@@ -44,8 +59,8 @@ div.form-field .control input {
   appearance: none;
   background: transparent;
   border: 0;
-  border-bottom: 1px solid #999;
-  color: #333;
+  border-bottom: 1px solid var(--grey);
+  color: var(--black);
   display: block;
   font-size: 1.2rem;
   margin-top: 24px;
@@ -65,4 +80,28 @@ div.form-field .control label {
   top: 0;
   transition: all 400ms;
   width: 100%;
+}
+
+div.form-field .has-error {
+  color: var(--error-color);
+  text-align: right;
+  margin: 0.5rem;
+}
+
+.btn {
+  padding: 0.5rem 1.5rem;
+  font-size: 1.2rem;
+  border-radius: 3px;
+}
+
+.btn:disabled {
+  padding: 0.5rem 1.5rem;
+  font-size: 1.2rem;
+  background-color: var(--light-grey) !important;
+  color: var(--grey) !important;
+}
+
+.btn.primary {
+  background-color: var(--primary-color);
+  color: var(--white);
 }
